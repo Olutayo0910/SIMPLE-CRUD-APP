@@ -1,7 +1,13 @@
-// Require the Mongoose library
+/**
+ * Require the Mongoose library.
+ * Mongoose provides a schema-based solution for modeling application data and interacting with MongoDB databases.
+ */
 const mongoose = require('mongoose')
 
-// Define the schema for the 'olutayo' collection
+/**
+ * Define the schema for the 'olutayo' collection.
+ * The schema specifies the structure of documents within the collection and defines the data types and validation rules for each field.
+ */
 const olutayoSchema = new mongoose.Schema({
     // Define the 'name' field with type String and required validation
     name: {
@@ -26,5 +32,9 @@ const olutayoSchema = new mongoose.Schema({
     }
 })
 
-// Create and export the Mongoose model for the 'olutayo' collection
+/**
+ * Create and export the Mongoose model for the 'olutayo' collection.
+ * Models are constructor functions that create instances of documents to be stored in MongoDB.
+ * Exporting the model makes it available for use in other parts of the application.
+ */
 module.exports = mongoose.model('olutayo', olutayoSchema)

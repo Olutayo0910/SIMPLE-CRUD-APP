@@ -1,25 +1,25 @@
-// Import the Express framework module
+/**
+ * This module defines the routes for handling Olutayo-related requests.
+ * These routes are responsible for fetching Olutayo data from the database.
+ */
+
 const express = require('express')
-
-// Create a new router instance using the Express Router() method
 const router = express.Router()
-
-// Import the Olutayo model from the '../models/olutayo' file
 const Olutayo = require('../models/olutayo')
 
-// Define a route handler for the HTTP GET request to the '/' endpoint
-router.get('/', async(req, res) => {
-    try{
-        // Attempt to find all documents in the Olutayo collection
-        const olutayo =  await Olutayo.find()
-        
-        // Send a JSON response containing the found documents
+/**
+ * GET /olutayo
+ * Fetches all Olutayo data from the database.
+ * Responds with a JSON array containing the Olutayo documents.
+ * If an error occurs during the database operation, sends an error message in the response.
+ */
+router.get('/', async (req, res) => {
+    try {
+        const olutayo = await Olutayo.find()
         res.json(olutayo)
-    }catch(err){
-        // If an error occurs, send an error message in the response
+    } catch (err) {
         res.send('Error ' + err)
     }
 })
 
-// Export the router module to make it available for use in other files
 module.exports = router
