@@ -10,3 +10,10 @@ const con = mongoose.connection
 con.on('open', function(){
     console.log('Testing connection')
 })
+
+const olutayoRouter = require('./routes/olutayo')
+app.use('/olutayo', olutayoRouter)
+
+app.listen(9000, () => {
+    console.log('server started')
+});
