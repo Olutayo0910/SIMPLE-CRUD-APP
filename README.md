@@ -6,17 +6,13 @@ This Node.js application provides a CRUD (Create, Read, Update, Delete) API for 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/olutayo-crud-api.git
+   git clone https://github.com/yourusername/SIMPLE-CRUD-APP.git
 
-2. Navigate to the project directory:
-    ```bash
-    cd olutayo-crud-api
-
-3. Install dependencies:
+2. Install dependencies:
     ```bash
     npm install
 
-4. Start the server:
+3. Start the server:
     ```bash
     npm start
 
@@ -31,33 +27,32 @@ The API provides the following endpoints:
 
 ## Database Schema
 The Olutayo model is defined with the following schema:
-```bash
-const mongoose = require('mongoose');
+    ```bash
+    const mongoose = require('mongoose');
 
-const olutayoSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    age: {
-        type: Number,
-        required: true
-    },
-    description: {
-        type: String,
-        required: true
-    },
-    available: {
-        type: Boolean,
-        required: false,
-        default: false
-    }
-});
+    const olutayoSchema = new mongoose.Schema({
+        name: {
+            type: String,
+            required: true
+        },
+        age: {
+            type: Number,
+            required: true
+        },
+        description: {
+            type: String,
+            required: true
+        },
+        available: {
+            type: Boolean,
+            required: false,
+            default: false
+        }
+    });
 
-module.exports = mongoose.model('Olutayo', olutayoSchema);
+    module.exports = mongoose.model('Olutayo', olutayoSchema);
 
-
-Routes
+## Routes
 
 The routes for handling Olutayo-related requests are defined in the `routes/olutayo.js` file. These routes interact with the MongoDB database using Mongoose.
 
