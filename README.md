@@ -27,6 +27,7 @@ The API provides the following endpoints:
 
 ## Database Schema
 The Olutayo model is defined with the following schema:
+    
     ```bash
     const mongoose = require('mongoose');
 
