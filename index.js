@@ -42,6 +42,8 @@ con.on('open', function(){
     console.log('Testing connection')
 })
 
+app.use(express.json())
+
 /**
  * Import the router module defined in ./routes/olutayo.js.
  * The olutayoRouter variable holds the router module, which defines routes for handling Olutayo-related requests.

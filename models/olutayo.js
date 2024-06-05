@@ -27,7 +27,7 @@ const olutayoSchema = new mongoose.Schema({
     // Define the 'available' field with type Boolean, required validation, and a default value of false
     available: {
         type: Boolean,
-        required: true,
+        required: false,
         default: false
     }
 })

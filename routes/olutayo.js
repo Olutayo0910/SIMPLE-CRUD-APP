@@ -22,4 +22,39 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('/:id', async (req, res) => {
+    try {
+        const olutayo_id = await Olutayo.findById(req.params.id)
+        res.json(olutayo_id)
+    } catch (err) {
+        res.send('Error ' + err)
+    }
+})
+
+router.post('/', async(req,res) => {
+        const olutayo = new Olutayo({
+            name: req.body.name,
+            age: req.body.age,
+            description: req.body.description,
+            available: req.body.available
+        })
+    try {
+        const n1 = await olutayo.save()
+        res.json(n1)
+    }catch (err) {
+        res.send('Error ' + err)
+    }
+})
+
+router.patch('/:id', async (req, res) => {
+    try {
+        const olutayo_id = await Olutayo.findById(req.params.id)
+        olutayo_id.available = req.body.available
+        const n1 = await olutayo_id.save()
+        res.json(n1)
+
+    } catch (err) {
+        res.send('Error ' + err)
+    }
+})
 module.exports = router
